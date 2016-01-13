@@ -27,11 +27,12 @@ int main()
 
 	wsk = &wdKonto;
 	wsk->zaloguj();
-	cout << "test github" << endl; 
-	cout << "test branch" << endl; 
+	
+	wsk = &fbKonto;
+	wsk->wyloguj();
 
-	//fbKonto.zaloguj();
-	//wdKonto.zaloguj();
+	wsk = &wdKonto;
+	wsk->wyloguj();
 
 	system("PAUSE");
 }

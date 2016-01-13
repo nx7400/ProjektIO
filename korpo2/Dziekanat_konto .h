@@ -8,6 +8,7 @@ class Dziekanat_konto_ : virtual public iKonto {
 private:
 	string Login = "123456";
 	string Haslo = "grazyna1234";
+	bool zalogowanyWD = false;
 
 public:
 
@@ -16,5 +17,6 @@ public:
 	void zaloguj();
 	void wyloguj();
 	void pobierz_wydarzenia();
+
 };
 #endif dziekanat_h
