@@ -27,7 +27,8 @@ int main()
 
 	wsk = &wdKonto;
 	wsk->zaloguj();
-	cout << test github << endl; 
+	cout << "test github" << endl; 
+	cout << "test branch" << endl; 
 
 	//fbKonto.zaloguj();
 	//wdKonto.zaloguj();
