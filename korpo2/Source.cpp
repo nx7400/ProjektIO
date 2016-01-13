@@ -20,13 +20,19 @@ int main()
 	iKonto *wsk;
 
 	FB_konto_ fbKonto; 
-	Dziekanat_konto_ wdKonto; 
+	Dziekanat_konto_ wdKonto;
+	Wyswietlacz Wys;
 
 	wsk = &fbKonto;
 	wsk->zaloguj();
 
 	wsk = &wdKonto;
 	wsk->zaloguj();
+
+	if (fbKonto.zalogowanyFB == true && wdKonto.zalogowanyWD == true)
+	{
+		Wys.wyswietl_menu();
+	}
 	
 	wsk = &fbKonto;
 	wsk->wyloguj();

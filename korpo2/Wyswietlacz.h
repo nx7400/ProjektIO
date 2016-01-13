@@ -1,10 +1,16 @@
+#ifndef wyswietlacz_h
+#define wyswietlacz_h
+#include "Plan.h"
+
 class Wyswietlacz {
 
 private:
 	int plan;
 
 public:
-	void wyswietl_plan();
+	void wyswietl_menu();
+
+	void wyswietl_plan(Plan);
 
 	void wyswietl_przedzial();
 
@@ -14,3 +20,4 @@ public:
 
 	void wyswietl_formularz_zaloguj();
 };
+#endif wyswietlacz_h

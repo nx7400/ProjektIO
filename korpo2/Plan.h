@@ -1,10 +1,20 @@
-class Plan {
+#ifndef plan_h
+#define plan_h
+#include "Zadanie.h"
 
+class Plan {
+	friend class Wyswietlacz;
 private:
-	int lista_Zadan;
+	//int lista_Zadan; //do zmiany w diagramach
+	//int konta;
+
+	int rozmiar;
+	Zadanie tab[1000];
 	int konta;
 
+
 public:
+
 	void dodaj();
 
 	void edytuj();
@@ -19,3 +29,4 @@ public:
 
 	void zaloguj();
 };
+#endif plan_h
