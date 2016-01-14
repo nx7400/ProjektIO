@@ -10,11 +10,12 @@ private:
 
 	int rozmiar;
 	Zadanie tab[1000];
-	int konta;
+
 
 
 public:
-
+	Plan();
+	
 	void dodaj();
 
 	void edytuj();

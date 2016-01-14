@@ -5,6 +5,7 @@
 
 void Wyswietlacz::wyswietl_menu(){
 	int l = 0;
+
 	Plan plan;
 
 	while (l != 4)
@@ -40,7 +41,7 @@ void Wyswietlacz::wyswietl_menu(){
 
 void Wyswietlacz::wyswietl_plan(Plan P) {
 
-	for (int i = 0; i<P.rozmiar; i++)
+	for (int i = 0; i<P.rozmiar-1; i++)
 	{
 		cout << i + 1 << ")" << endl;
 		cout << "Nazwa wydarzenia:";

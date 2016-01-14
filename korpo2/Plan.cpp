@@ -4,6 +4,13 @@
 #include "Plan.h"
 #include "Data.h"
 #include "Zadanie.h"
+#include "Dziekanat_konto .h"
+
+Plan::Plan(){
+	rozmiar = 0;
+}
+
+
 
 void Plan::dodaj() {
 	
@@ -62,16 +69,17 @@ void Plan::zapisz_do_pliku(Zadanie Z) {
 
 void Plan::wczytaj_z_pliku() {
 
+	Data dat;
 	fstream plik;
 	plik.open("plan.txt", ios::in);
-	Plan::rozmiar = 0;
+	this->rozmiar = 0;
 	if (plik.good())
 	{
 		Zadanie A;
 		int i = 0;
 		while (plik.good())
 		{
-			Plan::rozmiar++;
+			this->rozmiar++;
 			plik >> A.nazwa;
 			plik >> A.data.rok;
 			plik >> A.data.miesiac;
@@ -87,6 +95,7 @@ void Plan::wczytaj_z_pliku() {
 	else
 		cout << "brak wydarzen do wyswietlenia" << endl;
 	plik.close();
+	
 	
 }
 
