@@ -13,9 +13,9 @@ void FB_konto_::zaloguj() {
 	cout << "Podaj login i haslo do FB:" << endl;
 	while (a != Login|| b != Haslo)
 	{
-		cout << "Login:" << endl;
+		cout << "Login:";
 		cin >> a;
-		cout << "Haslo:" << endl;
+		cout << "Haslo:";
 		cin >> b;
 		if (a != Login || b != Haslo)
 		{
@@ -26,7 +26,7 @@ void FB_konto_::zaloguj() {
 
 	zalogowanyFB = true;
 	
-	cout << "Gratulacje zalogowales sie do FB!!!" << endl;
+	cout << "Gratulacje zalogowales sie do FB!!!" << endl<<endl;
 }
 
 void FB_konto_::wyloguj() {
