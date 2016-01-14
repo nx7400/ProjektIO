@@ -74,6 +74,7 @@
     <ClCompile Include="Plan.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Wyswietlacz.cpp" />
+    <ClCompile Include="Zadanie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data.h" />

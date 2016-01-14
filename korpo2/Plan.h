@@ -21,7 +21,7 @@ public:
 
 	void usun();
 
-	void zapisz_do_pliku();
+	void zapisz_do_pliku(Zadanie Z);
 
 	void wczytaj_z_pliku();
 

@@ -48,7 +48,7 @@ void Wyswietlacz::wyswietl_plan(Plan P) {
 		cout << "Data:";
 		cout << P.tab[i].data.rok << "-";
 		cout << P.tab[i].data.miesiac << "-";
-		cout << P.tab[i].data.dzien << ", godzina";
+		cout << P.tab[i].data.dzien << ", godzina: ";
 		cout << P.tab[i].data.godzina << ":";
 		cout << P.tab[i].data.minuta << endl;
 		cout << "Miejsce:" << P.tab[i].miejsce << endl;

@@ -18,5 +18,8 @@ private:
 	int priorytet;
 	string miejsce;
 	string nazwa;
+public:
+	Zadanie();
+	Zadanie(Data D, string M, string N, int P);
 };
 #endif zadanie_h

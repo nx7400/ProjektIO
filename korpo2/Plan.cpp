@@ -7,45 +7,38 @@
 
 void Plan::dodaj() {
 	
-	Data n;
-	Zadanie z;
+
 	int d, m, g, min, r, p;
 	string miejsce, nazwa;
-	fstream plik2("plan.txt", ios::out | ios::app);
+	
 	cout << "Data wydarzenia" << endl;
 	cout << "Dzien:";
 	cin >> d;
-	cout << endl;
+	
 	cout << "Miesiac:";
 	cin >> m;
-	cout << endl;
-	cout << "Godzina:";
+	
+	cout << "Dokladna godzina:";
 	cin >> g;
-	cout << ":";
+	
 	cin >> min;
-	cout << endl;
+	
 	cout << "Rok:";
 	cin >> r;
-	cout << endl;
+	
 	cout << "Miejsce wydarzenia:";
 	cin >> miejsce;
-	cout << endl;
+	
 	cout << "Nazwa wydarzenia:";
 	cin >> nazwa;
 	cout << "Priorytet:";
 	cin >> p;
 	cout << endl;
-	n.dzien = d; // czy to powinien tworzyc kostruktor Daty ?
-	n.godzina = g; //
-	n.miesiac = m; //
-	n.rok = r; //
-	n.minuta = min; //
-	z.data = n; //
-	z.miejsce = miejsce; // czy to powinien tworzyc konstruktor Zadania ?
-	z.nazwa = nazwa; //
-	z.priorytet = p; //
-	plik2 << z.nazwa << "	" << n.rok << "	" << n.miesiac << "	" << n.dzien << "	" << n.godzina << "	" << n.minuta << "	" << miejsce << "	" << z.priorytet;
-	plik2.close();
+
+	Data Dat(d, m, r, g, min);
+	Zadanie Z(Dat, miejsce, nazwa, p);
+
+	zapisz_do_pliku(Z);
 
 }
 
@@ -59,9 +52,12 @@ void Plan::usun() {
 	throw "Not yet implemented";
 }
 
-void Plan::zapisz_do_pliku() {
-	// TODO - implement Plan::zapisz do pliku
-	throw "Not yet implemented";
+void Plan::zapisz_do_pliku(Zadanie Z) {
+
+	fstream plik2("plan.txt", ios::out | ios::app);
+	plik2 << Z.nazwa << "	" << Z.data.rok << "	" << Z.data.miesiac << "	" << Z.data.dzien << "	" << Z.data.godzina << "	" << Z.data.minuta << "	" << Z.miejsce << "	" << Z.priorytet << endl;
+	plik2.close();
+
 }
 
 void Plan::wczytaj_z_pliku() {
