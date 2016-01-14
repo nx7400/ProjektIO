@@ -12,9 +12,9 @@ void Dziekanat_konto_::zaloguj() {
 	cout << "Podaj index i haslo do Wirtualnego Dziekanatu:" << endl;
 	while (a != Login || b != Haslo)
 	{
-		cout << "Index:";
+		cout << "Index:" << endl;
 		cin >> a;
-		cout << "Haslo:";
+		cout << "Haslo:" << endl;
 		cin >> b;
 		if (a != Login || b != Haslo)
 		{
