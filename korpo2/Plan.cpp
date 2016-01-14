@@ -4,7 +4,7 @@
 #include "Plan.h"
 #include "Data.h"
 #include "Zadanie.h"
-#include "Dziekanat_konto .h"
+#include "Dziekanat_konto.h"
 
 Plan::Plan(){
 	rozmiar = 0;

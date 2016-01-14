@@ -3,6 +3,10 @@
 #include "Wyswietlacz.h"
 #include "Plan.h"
 
+Wyswietlacz::Wyswietlacz(){
+
+}
+
 void Wyswietlacz::wyswietl_menu(){
 	int l = 0;
 

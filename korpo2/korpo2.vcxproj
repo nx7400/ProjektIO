@@ -65,8 +65,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Data.cpp" />
-    <ClCompile Include="Dziekanat_konto .cpp" />
-    <ClCompile Include="FB_konto .cpp" />
+    <ClCompile Include="Dziekanat_konto.cpp" />
+    <ClCompile Include="FB_konto.cpp" />
     <ClCompile Include="GPS .cpp" />
     <ClCompile Include="GPS_Jak_dojade .cpp" />
     <ClCompile Include="iJak_dojade.cpp" />
@@ -78,10 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data.h" />
-    <ClInclude Include="Dziekanat_konto .h" />
-    <ClInclude Include="FB_konto .h" />
-    <ClInclude Include="GPS .h" />
-    <ClInclude Include="GPS_Jak_dojade .h" />
+    <ClInclude Include="Dziekanat_konto.h" />
+    <ClInclude Include="FB_konto.h" />
+    <ClInclude Include="GPS.h" />
+    <ClInclude Include="GPS_Jak_dojade.h" />
     <ClInclude Include="iJak_dojade.h" />
     <ClInclude Include="iKonto.h" />
     <ClInclude Include="Plan.h" />

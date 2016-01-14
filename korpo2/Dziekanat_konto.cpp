@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Dziekanat_konto .h"
+#include "Dziekanat_konto.h"
 
 Dziekanat_konto_::Dziekanat_konto_()
 {

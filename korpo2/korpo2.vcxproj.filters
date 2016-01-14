@@ -18,12 +18,6 @@
     <ClCompile Include="Data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dziekanat_konto .cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FB_konto .cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GPS .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,21 +42,15 @@
     <ClCompile Include="Zadanie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dziekanat_konto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FB_konto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Dziekanat_konto .h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FB_konto .h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GPS .h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GPS_Jak_dojade .h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="iJak_dojade.h">
@@ -78,6 +66,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Zadanie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GPS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GPS_Jak_dojade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dziekanat_konto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FB_konto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

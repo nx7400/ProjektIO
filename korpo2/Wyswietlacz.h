@@ -8,6 +8,8 @@ private:
 	int plan;
 
 public:
+	Wyswietlacz();
+
 	void wyswietl_menu();
 
 	void wyswietl_plan(Plan);

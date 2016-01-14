@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#include "FB_konto .h"
+#include "FB_konto.h"
 
 FB_konto_::FB_konto_()
 {
