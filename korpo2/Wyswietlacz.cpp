@@ -12,29 +12,35 @@ void Wyswietlacz::wyswietl_menu(){
 
 	Plan plan;
 
-	while (l != 4)
+	while (l != 5)
 	{
 		cout << endl << endl << endl;
 		cout << "		Menu:" << endl;
 		cout << "	1)Przegladaj kalendarz" << endl;
 		cout << "	2)Dodaj wydarzenie" << endl;
-		cout << "	3)Szukaj polaczenia" << endl;
-		cout << "	4)Wyloguj" << endl;
+		cout << "	3)Edytuj wydarzenie" << endl;
+		cout << "	4)Szukaj polaczenia" << endl;
+		cout << "	5)Wyloguj" << endl;
 		cin >> l;
 		if (l == 2)
 		{
-			plan.dodaj();
+			wyswietl_formularz_dodaj_wydarzenie(plan);
 		}
 		if (l == 1)
 		{
-			plan.wczytaj_z_pliku();
+			
 			wyswietl_plan(plan);
 		}
 		if (l == 3)
 		{
+			wyswietl_formularz_edytuj_wydarznnie(plan);
+		}
+
+		if (l == 4)
+		{
 			cout << "opcja nie jest jeszcze gotowa - przepraszamy za utrudnienia" << endl;
 		}
-		if (l == 4)
+		if (l == 5)
 		{
 			cout << "Dziekujemy za skorzystanie z aplikacji" << endl;
 		}
@@ -44,6 +50,8 @@ void Wyswietlacz::wyswietl_menu(){
 }
 
 void Wyswietlacz::wyswietl_plan(Plan P) {
+
+	 P.wczytaj_z_pliku();
 
 	for (int i = 0; i<P.rozmiar-1; i++)
 	{
@@ -66,14 +74,23 @@ void Wyswietlacz::wyswietl_przedzial() {
 	throw "Not yet implemented";
 }
 
-void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie() {
-	// TODO - implement Wyswietlacz::wyswietl formularz dodaj wydarzenie
-	throw "Not yet implemented";
+void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie(Plan P) {
+	
+	P.dodaj();
 }
 
-void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie() {
-	// TODO - implement Wyswietlacz::wyswietl formularz edytuj wydarznnie
-	throw "Not yet implemented";
+void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie(Plan P) {
+
+	P.wczytaj_z_pliku();
+	
+	int id_wydarzenia;
+
+	cout << "Ktore wydarzenie chcesz edytowac: " << endl;
+	wyswietl_plan(P);
+	cout << "Podaj ID wydarzenia do edycji: ";
+	cin >> id_wydarzenia;
+	P.edytuj(id_wydarzenia);
+
 }
 
 void Wyswietlacz::wyswietl_formularz_zaloguj() {

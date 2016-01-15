@@ -49,9 +49,42 @@ void Plan::dodaj() {
 
 }
 
-void Plan::edytuj() {
-	// TODO - implement Plan::edytuj
-	throw "Not yet implemented";
+void Plan::edytuj(int id_wydarzenia) {
+	
+	int d, m, g, min, r, p;
+	string miejsce, nazwa;
+
+	cout << "Data wydarzenia" << endl;
+	cout << "Dzien:";
+	cin >> d;
+
+	cout << "Miesiac:";
+	cin >> m;
+
+	cout << "Dokladna godzina:";
+	cin >> g;
+
+	cin >> min;
+
+	cout << "Rok:";
+	cin >> r;
+
+	cout << "Miejsce wydarzenia:";
+	cin >> miejsce;
+
+	cout << "Nazwa wydarzenia:";
+	cin >> nazwa;
+
+	cout << "Priorytet:";
+	cin >> p;
+	cout << endl;
+
+	Data Dat(d, m, r, g, min);
+	Zadanie Z(Dat, miejsce, nazwa, p);
+
+	tab[id_wydarzenia] = Z;
+
+
 }
 
 void Plan::usun() {

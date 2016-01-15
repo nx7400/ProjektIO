@@ -18,7 +18,7 @@ public:
 	
 	void dodaj();
 
-	void edytuj();
+	void edytuj(int id_wydarzenia);
 
 	void usun();
 

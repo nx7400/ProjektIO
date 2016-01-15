@@ -12,13 +12,13 @@ public:
 
 	void wyswietl_menu();
 
-	void wyswietl_plan(Plan);
+	void wyswietl_plan(Plan P);
 
 	void wyswietl_przedzial();
 
-	void wyswietl_formularz_dodaj_wydarzenie();
+	void wyswietl_formularz_dodaj_wydarzenie(Plan P);
 
-	void wyswietl_formularz_edytuj_wydarznnie();
+	void wyswietl_formularz_edytuj_wydarznnie(Plan P);
 
 	void wyswietl_formularz_zaloguj();
 };

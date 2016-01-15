@@ -5,10 +5,10 @@ Zadanie::Zadanie(){
 
 }
 
-Zadanie::Zadanie(Data D, string N, string M, int P)
+Zadanie::Zadanie(Data D, string M, string N, int P)
 {
 	data = D;
-	nazwa = N;
 	miejsce = M;
+	nazwa = N;
 	priorytet = P;
 }
