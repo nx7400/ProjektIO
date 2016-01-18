@@ -6,8 +6,24 @@
 #include "Zadanie.h"
 #include "Dziekanat_konto.h"
 
+int Plan::rozmiar = 0;
+
+
 Plan::Plan(){
-	rozmiar = 0;
+
+	for (int i = 0; i < 1000; i++)
+	{
+		tab[i].nazwa = "";
+		tab[i].data.dzien = 0;
+		tab[i].data.miesiac = 0;
+		tab[i].data.godzina = 0;
+		tab[i].data.minuta = 0;
+		tab[i].data.rok = 0;
+		tab[i].miejsce = "";
+		tab[i].priorytet = 0;
+
+	}
+	
 }
 
 
@@ -45,7 +61,7 @@ void Plan::dodaj() {
 	Data Dat(d, m, r, g, min);
 	Zadanie Z(Dat, miejsce, nazwa, p);
 
-	zapisz_do_pliku(Z);
+	tab[rozmiar] = Z;
 
 }
 
@@ -92,36 +108,40 @@ void Plan::usun() {
 	throw "Not yet implemented";
 }
 
-void Plan::zapisz_do_pliku(Zadanie Z) {
+void Plan::zapisz_do_pliku() {
 
-	fstream plik2("plan.txt", ios::out | ios::app);
-	plik2 << Z.nazwa << "	" << Z.data.rok << "	" << Z.data.miesiac << "	" << Z.data.dzien << "	" << Z.data.godzina << "	" << Z.data.minuta << "	" << Z.miejsce << "	" << Z.priorytet << endl;
+	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out | ios::app );
+	for (int i = 0; i <rozmiar; i++)
+	{
+		plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << endl;
+	}
+	
 	plik2.close();
 
 }
 
 void Plan::wczytaj_z_pliku() {
 
-	Data dat;
 	fstream plik;
-	plik.open("plan.txt", ios::in);
-	this->rozmiar = 0;
+	plik.open("wydarzenia_uzytkownika.txt", ios::in);
+	rozmiar = 0;
 	if (plik.good())
 	{
-		Zadanie A;
-		int i = 0;
+		
+		int i = rozmiar;
 		while (plik.good())
 		{
-			this->rozmiar++;
-			plik >> A.nazwa;
-			plik >> A.data.rok;
-			plik >> A.data.miesiac;
-			plik >> A.data.dzien;
-			plik >> A.data.godzina;
-			plik >> A.data.minuta;
-			plik >> A.miejsce;
-			plik >> A.priorytet;
-			tab[i] = A;
+			rozmiar++;
+
+			plik >> tab[i].nazwa;
+			plik >> tab[i].data.rok;
+			plik >> tab[i].data.miesiac;
+			plik >> tab[i].data.dzien;
+			plik >> tab[i].data.godzina;
+			plik >> tab[i].data.minuta;
+			plik >> tab[i].miejsce;
+			plik >> tab[i].priorytet;
+	
 			i++;
 		}
 	}

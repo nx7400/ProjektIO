@@ -1,6 +1,7 @@
 #ifndef fb_h
 #define fb_h
 #include "iKonto.h"
+#include "Plan.h"
 #include <string>
 
 
@@ -19,6 +20,6 @@ public:
 
 	void zaloguj();
 	void wyloguj();
-	void pobierz_wydarzenia(); 
+	void pobierz_wydarzenia(Plan &P); 
 };
 #endif fb_h

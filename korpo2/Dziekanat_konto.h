@@ -2,6 +2,7 @@
 #ifndef dziekanat_h
 #define dziekanat_h
 #include "iKonto.h"
+#include "Plan.h"
 
 class Dziekanat_konto_ : virtual public iKonto {
 
@@ -17,7 +18,7 @@ public:
 
 	void zaloguj();
 	void wyloguj();
-	void pobierz_wydarzenia();
+	void pobierz_wydarzenia(Plan &P);
 
 };
 #endif dziekanat_h

@@ -2,6 +2,7 @@
 #define ikonto_h
 
 #include <string>
+#include "Plan.h"
 using namespace std;
 
 
@@ -15,7 +16,7 @@ public:
 	//iKonto(string a="", string b="");
 
 	virtual void zaloguj() = 0;
-	virtual void pobierz_wydarzenia() = 0;
+	virtual void pobierz_wydarzenia(Plan &P) = 0;
 	virtual void wyloguj() = 0;
 
 	

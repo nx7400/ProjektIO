@@ -4,6 +4,7 @@
 #include <fstream>
 #include "FB_konto.h"
 #include "Zadanie.h"
+#include "Plan.h"
 
 FB_konto_::FB_konto_()
 {
@@ -39,45 +40,32 @@ void FB_konto_::wyloguj() {
 
 }
 
-void FB_konto_::pobierz_wydarzenia()
+void FB_konto_::pobierz_wydarzenia(Plan &P)
 {
 	fstream plik;
 	plik.open("FB_powiadomienia.txt", ios::in);
-	Zadanie A;
-	Zadanie tab[1000];
-	int i = 0;
+
+	int i = Plan::rozmiar+1;
 	if (plik.good())
 	{
 
 		while (plik.good())
 		{
+			Plan::rozmiar++;
 
-			plik >> A.nazwa;
-			plik >> A.data.rok;
-			plik >> A.data.miesiac;
-			plik >> A.data.dzien;
-			plik >> A.data.godzina;
-			plik >> A.data.minuta;
-			plik >> A.miejsce;
-			A.priorytet = 2;
-			tab[i] = A;
+			plik >> P.tab[i].nazwa;
+			plik >> P.tab[i].data.rok;
+			plik >> P.tab[i].data.miesiac;
+			plik >> P.tab[i].data.dzien;
+			plik >> P.tab[i].data.godzina;
+			plik >> P.tab[i].data.minuta;
+			plik >> P.tab[i].miejsce;
+			P.tab[i].priorytet = 2;
+	
 			i++;
 
 		}
 	}
 	plik.close();
-	fstream plik2("plan.txt", ios::out);
-	if (plik2.good())
-	{
-		for (int j = 0; j<i; j++)
-		{
 
-
-			plik2 << tab[j].nazwa << "	" << tab[j].data.rok << "	" << tab[j].data.miesiac << "	" << tab[j].data.dzien << "	" << tab[j].data.godzina << "	" << tab[j].data.minuta << "	" << tab[j].miejsce << "	" << tab[j].priorytet << endl;
-
-
-		}
-	}
-
-	plik2.close();
 }

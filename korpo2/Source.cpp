@@ -33,6 +33,8 @@ int main()
 	//if (fbKonto.zalogowanyFB == true && wdKonto.zalogowanyWD == true)
 	//{
 		P.wczytaj_z_pliku();
+		fbKonto.pobierz_wydarzenia(P);
+		wdKonto.pobierz_wydarzenia(P);
 		Wys.wyswietl_menu(P);
 
 
@@ -43,6 +45,8 @@ int main()
 
 	wsk = &wdKonto;
 	wsk->wyloguj();
+
+	P.zapisz_do_pliku();
 
 	system("PAUSE");
 }

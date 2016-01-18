@@ -7,7 +7,7 @@ Wyswietlacz::Wyswietlacz(){
 
 }
 
-void Wyswietlacz::wyswietl_menu(Plan plan){
+void Wyswietlacz::wyswietl_menu(Plan &P){
 	int l = 0;
 
 
@@ -24,17 +24,17 @@ void Wyswietlacz::wyswietl_menu(Plan plan){
 
 		if (l == 2)
 		{
-			wyswietl_formularz_dodaj_wydarzenie(plan);
+			wyswietl_formularz_dodaj_wydarzenie(P);
 		}
 
 		if (l == 1)
 		{
-			wyswietl_plan(plan);
+			wyswietl_plan(P);
 		}
 
 		if (l == 3)
 		{
-			wyswietl_formularz_edytuj_wydarznnie(plan);
+			wyswietl_formularz_edytuj_wydarznnie(P);
 		}
 
 		if (l == 4)
@@ -46,6 +46,7 @@ void Wyswietlacz::wyswietl_menu(Plan plan){
 		{
 			cout << "Dziekujemy za skorzystanie z aplikacji" << endl;
 		}
+
 	}
 
 
@@ -55,7 +56,7 @@ void Wyswietlacz::wyswietl_plan(Plan P) {
 
 
 
-	for (int i = 0; i<P.rozmiar-1; i++)
+	for (int i = 0; i<Plan::rozmiar; i++)
 	{
 		cout << i + 1 << ")" << endl;
 		cout << "Nazwa wydarzenia:";
@@ -76,14 +77,14 @@ void Wyswietlacz::wyswietl_przedzial() {
 	throw "Not yet implemented";
 }
 
-void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie(Plan P) {
+void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie(Plan &P) {
 	
 	P.dodaj();
 }
 
-void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie(Plan P) {
+void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie(Plan &P) {
 
-	P.wczytaj_z_pliku();
+	//P.wczytaj_z_pliku();
 	
 	int id_wydarzenia;
 
