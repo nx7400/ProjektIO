@@ -12,6 +12,8 @@ class Zadanie {
 
 	friend class Plan;
 	friend class Wyswietlacz;
+	friend class FB_konto_;
+	friend class Dziekanat_konto_;
 private:
 	Data data;
 	int przedzial_czasowy;

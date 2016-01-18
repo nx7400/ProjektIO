@@ -7,10 +7,9 @@ Wyswietlacz::Wyswietlacz(){
 
 }
 
-void Wyswietlacz::wyswietl_menu(){
+void Wyswietlacz::wyswietl_menu(Plan plan){
 	int l = 0;
 
-	Plan plan;
 
 	while (l != 5)
 	{
@@ -22,15 +21,17 @@ void Wyswietlacz::wyswietl_menu(){
 		cout << "	4)Szukaj polaczenia" << endl;
 		cout << "	5)Wyloguj" << endl;
 		cin >> l;
+
 		if (l == 2)
 		{
 			wyswietl_formularz_dodaj_wydarzenie(plan);
 		}
+
 		if (l == 1)
 		{
-			
 			wyswietl_plan(plan);
 		}
+
 		if (l == 3)
 		{
 			wyswietl_formularz_edytuj_wydarznnie(plan);
@@ -40,6 +41,7 @@ void Wyswietlacz::wyswietl_menu(){
 		{
 			cout << "opcja nie jest jeszcze gotowa - przepraszamy za utrudnienia" << endl;
 		}
+
 		if (l == 5)
 		{
 			cout << "Dziekujemy za skorzystanie z aplikacji" << endl;
@@ -51,7 +53,7 @@ void Wyswietlacz::wyswietl_menu(){
 
 void Wyswietlacz::wyswietl_plan(Plan P) {
 
-	 P.wczytaj_z_pliku();
+
 
 	for (int i = 0; i<P.rozmiar-1; i++)
 	{

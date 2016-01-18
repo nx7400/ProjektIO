@@ -22,6 +22,7 @@ int main()
 	FB_konto_ fbKonto; 
 	Dziekanat_konto_ wdKonto;
 	Wyswietlacz Wys;
+	Plan P;
 
 	/*wsk = &fbKonto;
 	wsk->zaloguj();
@@ -31,7 +32,10 @@ int main()
 	*/
 	//if (fbKonto.zalogowanyFB == true && wdKonto.zalogowanyWD == true)
 	//{
-		Wys.wyswietl_menu();
+		P.wczytaj_z_pliku();
+		Wys.wyswietl_menu(P);
+
+
 	//}
 	
 	wsk = &fbKonto;

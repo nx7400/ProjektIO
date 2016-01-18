@@ -10,7 +10,7 @@ private:
 public:
 	Wyswietlacz();
 
-	void wyswietl_menu();
+	void wyswietl_menu(Plan P);
 
 	void wyswietl_plan(Plan P);
 
