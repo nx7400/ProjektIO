@@ -1,4 +1,4 @@
-Turniej_Scrabblowy_Wadowice	2016	1	23	11	45	Wadowice
-Swiatowe_Dni_Mlodziezy	2016	7	18	00	00	Krakow
-Fat_Bike_Race	2016	1	24	09	00	Gory_Stolowe
-Festiwal_Filmowy_Slavangard	2016	5	19	19	00	Krakow
+Turniej_Scrabblowy_Wadowice	2016	1	23	11	45	Wadowice 0
+Swiatowe_Dni_Mlodziezy	2016	7	18	00	00	Krakow 0
+Fat_Bike_Race	2016	1	24	09	00	Gory_Stolowe 0
+Festiwal_Filmowy_Slavangard	2016	5	19	19	00	Krakow 0

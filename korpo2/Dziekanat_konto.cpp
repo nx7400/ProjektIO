@@ -58,6 +58,7 @@ void Dziekanat_konto_::pobierz_wydarzenia(Plan &P)
 			plik >> P.tab[i].data.godzina;
 			plik >> P.tab[i].data.minuta;
 			plik >> P.tab[i].miejsce;
+			plik >> P.tab[i].edytowalny;
 			P.tab[i].priorytet = 1;
 
 			i++;

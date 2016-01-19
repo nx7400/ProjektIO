@@ -20,11 +20,12 @@ private:
 	int priorytet;
 	string miejsce;
 	string nazwa;
+	bool edytowalny; 
 	
 
 public:
 	
 	Zadanie();
-	Zadanie(Data D, string M, string N, int P);
+	Zadanie(Data D, string M, string N, int P,bool E);
 };
 #endif zadanie_h

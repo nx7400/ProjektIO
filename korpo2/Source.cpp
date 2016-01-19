@@ -35,6 +35,7 @@ int main()
 		P.wczytaj_z_pliku();
 		fbKonto.pobierz_wydarzenia(P);
 		wdKonto.pobierz_wydarzenia(P);
+		Wys.wyswietl_powiadomienia(P);
 		Wys.wyswietl_menu(P);
 
 

@@ -21,6 +21,7 @@ Plan::Plan(){
 		tab[i].data.rok = 0;
 		tab[i].miejsce = "";
 		tab[i].priorytet = 0;
+		tab[i].edytowalny = true;
 
 	}
 	
@@ -56,12 +57,17 @@ void Plan::dodaj() {
 	cin >> nazwa;
 	cout << "Priorytet:";
 	cin >> p;
+
 	cout << endl;
 
-	Data Dat(d, m, r, g, min);
-	Zadanie Z(Dat, miejsce, nazwa, p);
+	bool e = true;
 
-	tab[rozmiar] = Z;
+	Data Dat(d, m, r, g, min);
+	Zadanie Z(Dat, miejsce, nazwa, p,e);
+
+	tab[Plan::rozmiar] = Z;
+
+	Plan::rozmiar++;
 
 }
 
@@ -95,10 +101,12 @@ void Plan::edytuj(int id_wydarzenia) {
 	cin >> p;
 	cout << endl;
 
-	Data Dat(d, m, r, g, min);
-	Zadanie Z(Dat, miejsce, nazwa, p);
+	bool e = true;
 
-	tab[id_wydarzenia] = Z;
+	Data Dat(d, m, r, g, min);
+	Zadanie Z(Dat, miejsce, nazwa, p,e);
+
+	tab[id_wydarzenia-1] = Z;
 
 
 }
@@ -113,7 +121,10 @@ void Plan::zapisz_do_pliku() {
 	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out | ios::app );
 	for (int i = 0; i <rozmiar; i++)
 	{
-		plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << endl;
+		if (tab[i].edytowalny == true)
+		{
+			plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny << endl;
+		}
 	}
 	
 	plik2.close();
@@ -141,6 +152,7 @@ void Plan::wczytaj_z_pliku() {
 			plik >> tab[i].data.minuta;
 			plik >> tab[i].miejsce;
 			plik >> tab[i].priorytet;
+			plik >> tab[i].edytowalny;
 	
 			i++;
 		}

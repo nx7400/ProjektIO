@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <Windows.h>
 #include "Wyswietlacz.h"
 #include "Plan.h"
 
@@ -84,17 +85,69 @@ void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie(Plan &P) {
 
 void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie(Plan &P) {
 
-	//P.wczytaj_z_pliku();
 	
 	int id_wydarzenia;
 
+start:
 	cout << "Ktore wydarzenie chcesz edytowac: " << endl;
 	wyswietl_plan(P);
 	cout << "Podaj ID wydarzenia do edycji: ";
 	cin >> id_wydarzenia;
-	P.edytuj(id_wydarzenia);
+
+	if (P.tab[id_wydarzenia-1].edytowalny == true)
+	{
+		P.edytuj(id_wydarzenia);
+	}
+	else
+	{
+		cout << "Nie mozesz edytowaæ tego wydarzenia poniewaz nie Ty je utworzyles !!!" << endl;
+		goto start;
+	}
 
 }
+
+void Wyswietlacz::wyswietl_powiadomienia(Plan P) {
+
+	SYSTEMTIME T;
+	GetLocalTime(&T);
+
+	cout << endl << endl << endl << "Dzis jest " << T.wDay << "-" << T.wMonth << "-" << T.wYear << ", godzina" << T.wHour << ":" << T.wMinute << endl << endl;
+	cout << "Wydarzenia na dzis:" << endl;
+
+	bool w = false;
+
+	for (int i = 0; i<(P.rozmiar - 1); i++)
+	{
+		if (P.tab[i].data.dzien == T.wDay && P.tab[i].data.miesiac == T.wMonth && T.wYear == P.tab[i].data.rok)
+		{
+			cout << P.tab[i].nazwa << ", miejsce:" << P.tab[i].miejsce << endl;
+			w = true;
+		}
+	}
+	if (w == false)
+	{
+		cout << "Brak planow na dzis" << endl;
+	}
+
+	cout << endl << endl;
+	w = false;
+
+	for (int i = 0; i<(P.rozmiar - 1); i++)
+	{
+		if (P.tab[i].priorytet == 1 && P.tab[i].data.dzien <= (T.wDay + 2) && P.tab[i].data.miesiac == T.wMonth && T.wYear == P.tab[i].data.rok)
+		{
+			if (w == false)
+			{
+				cout << "Pamietaj! W ciagu najblizszych 2 dni masz nastepujace wydarzenia oznaczone priorytetem 1:" << endl;
+			}
+			cout << P.tab[i].nazwa << ", miejsce:" << P.tab[i].miejsce << endl;
+			w = true;
+		}
+	}
+
+}
+
+
 
 void Wyswietlacz::wyswietl_formularz_zaloguj() {
 	// TODO - implement Wyswietlacz::wyswietl formularz zaloguj
