@@ -24,14 +24,14 @@ int main()
 	Wyswietlacz Wys;
 	Plan P;
 
-	/*wsk = &fbKonto;
+	wsk = &fbKonto;
 	wsk->zaloguj();
 
 	wsk = &wdKonto;
 	wsk->zaloguj();
-	*/
-	//if (fbKonto.zalogowanyFB == true && wdKonto.zalogowanyWD == true)
-	//{
+	
+	if (fbKonto.zalogowanyFB == true && wdKonto.zalogowanyWD == true)
+	{
 		P.wczytaj_z_pliku();
 		fbKonto.pobierz_wydarzenia(P);
 		wdKonto.pobierz_wydarzenia(P);
@@ -39,7 +39,7 @@ int main()
 		Wys.wyswietl_menu(P);
 
 
-	//}
+	}
 	
 	wsk = &fbKonto;
 	wsk->wyloguj();

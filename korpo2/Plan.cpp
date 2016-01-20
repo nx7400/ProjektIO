@@ -21,7 +21,7 @@ Plan::Plan(){
 		tab[i].data.rok = 0;
 		tab[i].miejsce = "";
 		tab[i].priorytet = 0;
-		tab[i].edytowalny = true;
+		tab[i].edytowalny = false;
 
 	}
 	
@@ -121,23 +121,23 @@ void Plan::zapisz_do_pliku() {
 	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out );
 	for (int i = 0; i <Plan::rozmiar; i++)
 	{
-		if (i == 0)
-		{
+		//if (i == 0)
+		//{
 
 			if (tab[i].edytowalny == true)
 			{
-				plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny;
+				plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny<<" ";
 			}
 
-		}
+		//}
 
-		else
+	/*	else
 		{
 			if (tab[i].edytowalny == true)
 			{
 				plik2 << endl << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny;
 			}
-		}
+		}*/
 
 
 	}
@@ -182,12 +182,4 @@ void Plan::wczytaj_z_pliku() {
 	
 }
 
-void Plan::pobierz_zadanie() {
-	// TODO - implement Plan::pobierz zadanie
-	throw "Not yet implemented";
-}
 
-void Plan::zaloguj() {
-	// TODO - implement Plan::zaloguj
-	throw "Not yet implemented";
-}

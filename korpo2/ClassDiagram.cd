@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Data" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAgBAAAAAAAAAAQAACACAAAABBAAAAAiAQAAAAA=</HashCode>
+      <FileName>Data.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziekanat_konto_" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAACAAQAAABAAAAQAwAAAAA=</HashCode>
+      <FileName>Dziekanat_konto.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FB_konto_" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABCAAQAAABAAAAQgQAAAAA=</HashCode>
+      <FileName>FB_konto.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPS" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>GPS.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPS_Jak_dojade" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GPS_Jak_dojade.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iJak_dojade" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>iJak_dojade.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iKonto" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAQAAABAAAAQAQAAAAA=</HashCode>
+      <FileName>iKonto.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plan" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAaAAAAAAAAAAAAAAAAACAAABAAABIAAQAAAAAAA=</HashCode>
+      <FileName>Plan.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wyswietlacz" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEIBIAAAAAACCAAAAAAABAAAAAgAAAAAAAAAACA=</HashCode>
+      <FileName>Wyswietlacz.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zadanie" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAgAAAAAAAAAAEAAAAAAAAAQAAAAYAA=</HashCode>
+      <FileName>Zadanie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

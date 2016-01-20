@@ -17,7 +17,6 @@ public:
 	void usun();
 	void zapisz_do_pliku();
 	void wczytaj_z_pliku();
-	void pobierz_zadanie();
-	void zaloguj();
+	
 };
 #endif plan_h
