@@ -118,13 +118,28 @@ void Plan::usun() {
 
 void Plan::zapisz_do_pliku() {
 
-	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out | ios::app );
-	for (int i = 0; i <rozmiar; i++)
+	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out );
+	for (int i = 0; i <Plan::rozmiar; i++)
 	{
-		if (tab[i].edytowalny == true)
+		if (i == 0)
 		{
-			plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny << endl;
+
+			if (tab[i].edytowalny == true)
+			{
+				plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny;
+			}
+
 		}
+
+		else
+		{
+			if (tab[i].edytowalny == true)
+			{
+				plik2 << endl << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny;
+			}
+		}
+
+
 	}
 	
 	plik2.close();
@@ -135,14 +150,16 @@ void Plan::wczytaj_z_pliku() {
 
 	fstream plik;
 	plik.open("wydarzenia_uzytkownika.txt", ios::in);
-	rozmiar = 0;
+	Plan::rozmiar = 0;
 	if (plik.good())
 	{
 		
-		int i = rozmiar;
+		int i = Plan::rozmiar;
 		while (plik.good())
 		{
-			rozmiar++;
+			
+
+			
 
 			plik >> tab[i].nazwa;
 			plik >> tab[i].data.rok;
@@ -153,7 +170,8 @@ void Plan::wczytaj_z_pliku() {
 			plik >> tab[i].miejsce;
 			plik >> tab[i].priorytet;
 			plik >> tab[i].edytowalny;
-	
+
+			Plan::rozmiar++;
 			i++;
 		}
 	}

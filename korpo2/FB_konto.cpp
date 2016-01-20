@@ -45,7 +45,7 @@ void FB_konto_::pobierz_wydarzenia(Plan &P)
 	fstream plik;
 	plik.open("FB_powiadomienia.txt", ios::in);
 
-	int i = Plan::rozmiar+1;
+	int i = Plan::rozmiar;
 	if (plik.good())
 	{
 
