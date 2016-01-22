@@ -13,7 +13,6 @@ public:
 	string Login;
 	string Haslo;
 
-	//iKonto(string a="", string b="");
 
 	virtual void zaloguj() = 0;
 	virtual void pobierz_wydarzenia(Plan &P) = 0;

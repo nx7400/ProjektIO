@@ -21,7 +21,10 @@ void Wyswietlacz::wyswietl_menu(Plan &P){
 		cout << "	3)Edytuj wydarzenie" << endl;
 		cout << "	4)Szukaj polaczenia" << endl;
 		cout << "	5)Wyloguj" << endl;
+		cout << "	Twoj wbor: ";
 		cin >> l;
+
+		system("cls");
 
 		if (l == 2)
 		{
@@ -55,7 +58,7 @@ void Wyswietlacz::wyswietl_menu(Plan &P){
 
 void Wyswietlacz::wyswietl_plan(Plan &P) {
 
-	sortuj(P);
+	P.sortuj();
 
 
 	for (int i = 1; i<Plan::rozmiar; i++)
@@ -74,14 +77,11 @@ void Wyswietlacz::wyswietl_plan(Plan &P) {
 	}
 }
 
-void Wyswietlacz::wyswietl_przedzial() {
-	// TODO - implement Wyswietlacz::wyswietl przedzial
-	throw "Not yet implemented";
-}
 
 void Wyswietlacz::wyswietl_formularz_dodaj_wydarzenie(Plan &P) {
 	
 	P.dodaj();
+	cout << "Dodano nowe wydarzenie !!!" << endl;
 }
 
 void Wyswietlacz::wyswietl_formularz_edytuj_wydarznnie(Plan &P) {
@@ -112,7 +112,7 @@ void Wyswietlacz::wyswietl_powiadomienia(Plan P) {
 	SYSTEMTIME T;
 	GetLocalTime(&T);
 
-	cout << endl << endl << endl << "Dzis jest " << T.wDay << "-" << T.wMonth << "-" << T.wYear << ", godzina" << T.wHour << ": " << T.wMinute << endl << endl;
+	cout << endl << endl << endl << "Dzis jest " << T.wDay << "-" << T.wMonth << "-" << T.wYear << ", godzina " << T.wHour << ":" << T.wMinute << endl << endl;
 	cout << "Wydarzenia na dzis: " << endl;
 
 	bool w = false;
@@ -148,52 +148,7 @@ void Wyswietlacz::wyswietl_powiadomienia(Plan P) {
 
 }
 
-void Wyswietlacz::sortuj(Plan &P)
-{
-	Plan pom;
-	for(int i = 0; i < Plan::rozmiar-1; i++)
-	{
-		for (int j = 0; j < Plan::rozmiar-i-1; j++)
-		{
-			if ( P.tab[j].data.rok > P.tab[j + 1].data.rok )
-			{
-				pom.tab[j] = P.tab[j];
-				P.tab[j] = P.tab[j + 1];
-				P.tab[j + 1] = pom.tab[j];
-			}
 
-			if (P.tab[j].data.rok == P.tab[j + 1].data.rok && P.tab[j].data.miesiac > P.tab[j + 1].data.miesiac)
-			{
-				pom.tab[j] = P.tab[j];
-				P.tab[j] = P.tab[j + 1];
-				P.tab[j + 1] = pom.tab[j];
-			}
-
-			if (P.tab[j].data.rok == P.tab[j + 1].data.rok && P.tab[j].data.miesiac == P.tab[j + 1].data.miesiac && P.tab[j].data.dzien > P.tab[j + 1].data.dzien)
-			{
-				pom.tab[j] = P.tab[j];
-				P.tab[j] = P.tab[j + 1];
-				P.tab[j + 1] = pom.tab[j];
-			}
-
-			if (P.tab[j].data.rok == P.tab[j + 1].data.rok && P.tab[j].data.miesiac == P.tab[j + 1].data.miesiac && P.tab[j].data.dzien == P.tab[j + 1].data.dzien && P.tab[j].data.godzina > P.tab[j + 1].data.godzina)
-			{
-				pom.tab[j] = P.tab[j];
-				P.tab[j] = P.tab[j + 1];
-				P.tab[j + 1] = pom.tab[j];
-			}
-
-			if (P.tab[j].data.rok == P.tab[j + 1].data.rok && P.tab[j].data.miesiac == P.tab[j + 1].data.miesiac && P.tab[j].data.dzien == P.tab[j + 1].data.dzien && P.tab[j].data.godzina == P.tab[j + 1].data.godzina && P.tab[j].data.minuta > P.tab[j + 1].data.minuta)
-			{
-				pom.tab[j] = P.tab[j];
-				P.tab[j] = P.tab[j + 1];
-				P.tab[j + 1] = pom.tab[j];
-			}
-
-
-		}
-	}
-}
 
 void Wyswietlacz::wyswietl_formularz_zaloguj() {
 	// TODO - implement Wyswietlacz::wyswietl formularz zaloguj

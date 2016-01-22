@@ -106,7 +106,7 @@ void Plan::edytuj(int id_wydarzenia) {
 	Data Dat(d, m, r, g, min);
 	Zadanie Z(Dat, miejsce, nazwa, p,e);
 
-	tab[id_wydarzenia-1] = Z;
+	tab[id_wydarzenia] = Z;
 
 
 }
@@ -121,24 +121,11 @@ void Plan::zapisz_do_pliku() {
 	fstream plik2( "wydarzenia_uzytkownika.txt", ios::out );
 	for (int i = 0; i <Plan::rozmiar; i++)
 	{
-		//if (i == 0)
-		//{
 
-			if (tab[i].edytowalny == true)
-			{
-				plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny<<" ";
-			}
-
-		//}
-
-	/*	else
+		if (tab[i].edytowalny == true)
 		{
-			if (tab[i].edytowalny == true)
-			{
-				plik2 << endl << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny;
-			}
-		}*/
-
+			plik2 << tab[i].nazwa << "	" << tab[i].data.rok << "	" << tab[i].data.miesiac << "	" << tab[i].data.dzien << "	" << tab[i].data.godzina << "	" << tab[i].data.minuta << "	" << tab[i].miejsce << "	" << tab[i].priorytet << "	" << tab[i].edytowalny << " ";
+		}
 
 	}
 	
@@ -180,6 +167,53 @@ void Plan::wczytaj_z_pliku() {
 	plik.close();
 	
 	
+}
+
+void Plan::sortuj()
+{
+	Plan pom;
+	for (int i = 0; i < Plan::rozmiar - 1; i++)
+	{
+		for (int j = 0; j < Plan::rozmiar - i - 1; j++)
+		{
+			if (tab[j].data.rok > tab[j + 1].data.rok)
+			{
+				pom.tab[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = pom.tab[j];
+			}
+
+			if (tab[j].data.rok == tab[j + 1].data.rok && tab[j].data.miesiac > tab[j + 1].data.miesiac)
+			{
+				pom.tab[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = pom.tab[j];
+			}
+
+			if (tab[j].data.rok == tab[j + 1].data.rok && tab[j].data.miesiac == tab[j + 1].data.miesiac && tab[j].data.dzien > tab[j + 1].data.dzien)
+			{
+				pom.tab[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = pom.tab[j];
+			}
+
+			if (tab[j].data.rok == tab[j + 1].data.rok && tab[j].data.miesiac == tab[j + 1].data.miesiac && tab[j].data.dzien == tab[j + 1].data.dzien && tab[j].data.godzina > tab[j + 1].data.godzina)
+			{
+				pom.tab[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = pom.tab[j];
+			}
+
+			if (tab[j].data.rok == tab[j + 1].data.rok && tab[j].data.miesiac == tab[j + 1].data.miesiac && tab[j].data.dzien == tab[j + 1].data.dzien && tab[j].data.godzina == tab[j + 1].data.godzina && tab[j].data.minuta > tab[j + 1].data.minuta)
+			{
+				pom.tab[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = pom.tab[j];
+			}
+
+
+		}
+	}
 }
 
 
