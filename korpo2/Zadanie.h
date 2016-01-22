@@ -25,7 +25,7 @@ private:
 
 public:
 	
-	Zadanie();
-	Zadanie(Data D, string M, string N, int P,bool E);
+	Zadanie(); // konstruktor domniemany
+	Zadanie(Data D, string M, string N, int P,bool E); // konstruktor
 };
 #endif zadanie_h

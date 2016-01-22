@@ -12,11 +12,11 @@ public:
 
 	Plan();
 	
-	void dodaj();
-	void edytuj(int id_wydarzenia);
-	void usun();
-	void zapisz_do_pliku();
-	void wczytaj_z_pliku();
-	void sortuj();
+	void dodaj(); // dodaje zadanie do istniejacej tablicy
+	void edytuj(int id_wydarzenia); // edytuje istniejace wydarzenie na tablicy
+	void usun(); // usuwa wydarzenie
+	void zapisz_do_pliku(); // zapisuje tablice zadan do pliku
+	void wczytaj_z_pliku(); // wczytuje tablice zadan do pliku
+	void sortuj(); // sortuje wydarzenia wg daty
 };
 #endif plan_h

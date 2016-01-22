@@ -16,10 +16,10 @@ public:
 
 	bool zalogowanyFB = false;
 	
-	FB_konto_(); //zaimplementowac mozliwosc dodania nowego uzytkownika
+	FB_konto_(); 
 
-	void zaloguj();
-	void wyloguj();
-	void pobierz_wydarzenia(Plan &P); 
+	void zaloguj();// sprawdza zgodnosc loginu i hasla i ustawia flage zalogowanyFB w zaleznosci od powodzenia
+	void wyloguj();// wylogowuje zalogowanego uzytkownika i ustawia flage zalogowanyFB na false
+	void pobierz_wydarzenia(Plan &P); // wczytuje wydarzenia z pliku dziekanat.txt do tablicy z zadaniami
 };
 #endif fb_h

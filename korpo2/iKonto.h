@@ -10,9 +10,9 @@ class iKonto{
 
 public:
 
-	virtual void zaloguj() = 0;
-	virtual void pobierz_wydarzenia(Plan &P) = 0;
-	virtual void wyloguj() = 0;
+	virtual void zaloguj() = 0; // funkcje wirtualne rozwijane w klasach dziedziczacych
+	virtual void pobierz_wydarzenia(Plan &P) = 0; // funkcje wirtualne rozwijane w klasach dziedziczacych
+	virtual void wyloguj() = 0;// funkcje wirtualne rozwijane w klasach dziedziczacych
 
 	
 };
