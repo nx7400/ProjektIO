@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <Windows.h>
 #include "Zadanie.h"
 #include "Wyswietlacz.h"
 #include "FB_konto.h"
@@ -14,8 +15,25 @@
 
 using namespace std;
 
+/** \mainpage Dokumentacja programu "Organizer"
+*	Projekt koncowy - Inzynieria Oprogramowania
+*
+*	@author Michal Paszkowski
+*	@author Damian Pucilowski 
+*	@author Pawel Mazurek
+*
+*	Inzynieria Obliczeniowa
+*
+*/
+
+
+
 int main()
 {
+	HANDLE G;
+
+	G = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(G, FOREGROUND_BLUE|FOREGROUND_INTENSITY);
 	
 	iKonto *wsk;
 
