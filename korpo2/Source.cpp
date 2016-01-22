@@ -37,8 +37,6 @@ int main()
 		wdKonto.pobierz_wydarzenia(P);
 		Wys.wyswietl_powiadomienia(P);
 		Wys.wyswietl_menu(P);
-
-
 	}
 	
 	wsk = &fbKonto;

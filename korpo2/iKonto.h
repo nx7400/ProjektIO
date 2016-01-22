@@ -10,10 +10,6 @@ class iKonto{
 
 public:
 
-	string Login;
-	string Haslo;
-
-
 	virtual void zaloguj() = 0;
 	virtual void pobierz_wydarzenia(Plan &P) = 0;
 	virtual void wyloguj() = 0;

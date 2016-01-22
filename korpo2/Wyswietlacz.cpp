@@ -150,9 +150,3 @@ void Wyswietlacz::wyswietl_powiadomienia(Plan P) {
 
 
 
-void Wyswietlacz::wyswietl_formularz_zaloguj() {
-	// TODO - implement Wyswietlacz::wyswietl formularz zaloguj
-	throw "Not yet implemented";
-}
-
-
